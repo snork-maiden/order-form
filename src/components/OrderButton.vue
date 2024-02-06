@@ -1,22 +1,24 @@
 <script setup>
+import { useStore } from 'vuex'
 
 const props = defineProps({
-  cityName: String
+  cityId: Number
 })
 
 const emit = defineEmits({
-  click: null,
+  click: null
 })
 
+const store = useStore()
+
 function initializeOrder() {
-    // change current city in store
-    emit('click')
+  store.commit('currentCityId', { cityId: props.cityId })
+  emit('click')
 }
 </script>
 
 <template>
-<button type="button" @click="initializeOrder">
+  <button type="button" @click="initializeOrder">
     <slot></slot>
-</button>
+  </button>
 </template>
-
