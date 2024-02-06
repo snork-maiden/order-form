@@ -37,7 +37,7 @@ const mutations = {
         }
 
         const ids = state.citiesList.map(city => city.id)
-        if (!ids.find(payload.cityId)) {
+        if (!ids.includes(payload.cityId)) {
             throw new Error('This city id does not exist')
         }
         state.currentCityId = payload.cityId;

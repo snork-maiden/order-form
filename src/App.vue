@@ -4,10 +4,10 @@ import TheMain from './components/TheMain.vue';
 </script>
 
 <template>
-  <main>
+  <main class="p-6 bg-white rounded-lg shadow-md">
     <TheMain />
   </main>
-</template>
+</template> 
 
 <style scoped>
 
