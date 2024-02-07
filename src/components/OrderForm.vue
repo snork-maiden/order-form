@@ -67,6 +67,7 @@ onMounted(() => {
         name="phone"
         id="phone"
         placeholder="+7 (900) 000-00-00"
+        @focus="form.phone += '.'"
         required
       />
 

@@ -16,6 +16,7 @@ const state = {
         }
     ],
     currentCityId: null,
+    orderResponse: null
 
 }
 const getters = {
@@ -24,6 +25,9 @@ const getters = {
     },
     getCurrentCityId(state) {
         return state.currentCityId
+    },
+    getOrderResponse(state) {
+        return state.orderResponse
     },
 }
 
@@ -41,6 +45,9 @@ const mutations = {
             throw new Error('This city id does not exist')
         }
         state.currentCityId = payload.cityId;
+    },
+    orderResponse(state, payload) {
+        state.orderResponse = payload.response
     }
 }
 
