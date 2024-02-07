@@ -23,7 +23,9 @@ let isFieldsNotEmpty = computed(
 
 async function createRequest() {
   store.commit("currentCityId", { cityId: null });
+
   emit("close");
+  
   form.value.phone = "+" + form.value.phone.replaceAll(/[^0-9]/g, "");
   const response = (await sendOrderRequest(form.value)).data;
 
